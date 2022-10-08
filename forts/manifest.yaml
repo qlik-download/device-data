@@ -1,4 +1,4 @@
-version: 0.1.2965
+version: 0.1.2980
 devicetypes:
 - aws
 - gcp
@@ -55,7 +55,7 @@ components:
   type: fac
   bucket: fort-admin-console
 - component: qliksense-ops-runner
-  version: 1.0.4394
+  version: 1.0.4409
   type: ops
   registry: ghcr.io/qlik-download
 artifacts:
@@ -30843,3 +30843,258 @@ artifacts:
       scope: inventory
       type: $eq
       value: 0.1.2964
+- artifact: ops-runner-0.1.2966.mender
+  provides:
+  - component: qliksense-ops-runner
+    version: 1.0.4395
+    type: ops
+    registry: ghcr.io/qlik-download
+  version: 0.1.2966
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-version
+      scope: inventory
+      type: $eq
+      value: 0.1.2965
+- artifact: ops-runner-0.1.2967.mender
+  provides:
+  - component: qliksense-ops-runner
+    version: 1.0.4396
+    type: ops
+    registry: ghcr.io/qlik-download
+  version: 0.1.2967
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-version
+      scope: inventory
+      type: $eq
+      value: 0.1.2966
+- artifact: ops-runner-0.1.2968.mender
+  provides:
+  - component: qliksense-ops-runner
+    version: 1.0.4397
+    type: ops
+    registry: ghcr.io/qlik-download
+  version: 0.1.2968
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-version
+      scope: inventory
+      type: $eq
+      value: 0.1.2967
+- artifact: ops-runner-0.1.2969.mender
+  provides:
+  - component: qliksense-ops-runner
+    version: 1.0.4398
+    type: ops
+    registry: ghcr.io/qlik-download
+  version: 0.1.2969
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-version
+      scope: inventory
+      type: $eq
+      value: 0.1.2968
+- artifact: ops-runner-0.1.2970.mender
+  provides:
+  - component: qliksense-ops-runner
+    version: 1.0.4399
+    type: ops
+    registry: ghcr.io/qlik-download
+  version: 0.1.2970
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-version
+      scope: inventory
+      type: $eq
+      value: 0.1.2969
+- artifact: ops-runner-0.1.2971.mender
+  provides:
+  - component: qliksense-ops-runner
+    version: 1.0.4400
+    type: ops
+    registry: ghcr.io/qlik-download
+  version: 0.1.2971
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-version
+      scope: inventory
+      type: $eq
+      value: 0.1.2970
+- artifact: ops-runner-0.1.2972.mender
+  provides:
+  - component: qliksense-ops-runner
+    version: 1.0.4401
+    type: ops
+    registry: ghcr.io/qlik-download
+  version: 0.1.2972
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-version
+      scope: inventory
+      type: $eq
+      value: 0.1.2971
+- artifact: ops-runner-0.1.2973.mender
+  provides:
+  - component: qliksense-ops-runner
+    version: 1.0.4402
+    type: ops
+    registry: ghcr.io/qlik-download
+  version: 0.1.2973
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-version
+      scope: inventory
+      type: $eq
+      value: 0.1.2972
+- artifact: ops-runner-0.1.2974.mender
+  provides:
+  - component: qliksense-ops-runner
+    version: 1.0.4403
+    type: ops
+    registry: ghcr.io/qlik-download
+  version: 0.1.2974
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-version
+      scope: inventory
+      type: $eq
+      value: 0.1.2973
+- artifact: ops-runner-0.1.2975.mender
+  provides:
+  - component: qliksense-ops-runner
+    version: 1.0.4404
+    type: ops
+    registry: ghcr.io/qlik-download
+  version: 0.1.2975
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-version
+      scope: inventory
+      type: $eq
+      value: 0.1.2974
+- artifact: ops-runner-0.1.2976.mender
+  provides:
+  - component: qliksense-ops-runner
+    version: 1.0.4405
+    type: ops
+    registry: ghcr.io/qlik-download
+  version: 0.1.2976
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-version
+      scope: inventory
+      type: $eq
+      value: 0.1.2975
+- artifact: ops-runner-0.1.2977.mender
+  provides:
+  - component: qliksense-ops-runner
+    version: 1.0.4406
+    type: ops
+    registry: ghcr.io/qlik-download
+  version: 0.1.2977
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-version
+      scope: inventory
+      type: $eq
+      value: 0.1.2976
+- artifact: ops-runner-0.1.2978.mender
+  provides:
+  - component: qliksense-ops-runner
+    version: 1.0.4407
+    type: ops
+    registry: ghcr.io/qlik-download
+  version: 0.1.2978
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-version
+      scope: inventory
+      type: $eq
+      value: 0.1.2977
+- artifact: ops-runner-0.1.2979.mender
+  provides:
+  - component: qliksense-ops-runner
+    version: 1.0.4408
+    type: ops
+    registry: ghcr.io/qlik-download
+  version: 0.1.2979
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-version
+      scope: inventory
+      type: $eq
+      value: 0.1.2978
+- artifact: ops-runner-0.1.2980.mender
+  provides:
+  - component: qliksense-ops-runner
+    version: 1.0.4409
+    type: ops
+    registry: ghcr.io/qlik-download
+  version: 0.1.2980
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-version
+      scope: inventory
+      type: $eq
+      value: 0.1.2979
