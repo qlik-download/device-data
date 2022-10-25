@@ -1,4 +1,4 @@
-version: 0.1.3138
+version: 0.1.3146
 devicetypes:
 - aws
 - gcp
@@ -55,7 +55,7 @@ components:
   type: snap
   bucket: qlik-snaps
 - component: qliksense-ops-runner
-  version: 1.0.4576
+  version: 1.0.4585
   type: ops
   registry: ghcr.io/qlik-download
 artifacts:
@@ -33483,3 +33483,139 @@ artifacts:
       scope: inventory
       type: $eq
       value: 0.1.3137
+- artifact: ops-runner-0.1.3139.mender
+  provides:
+  - component: qliksense-ops-runner
+    version: 1.0.4577
+    type: ops
+    registry: ghcr.io/qlik-download
+  version: 0.1.3139
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-version
+      scope: inventory
+      type: $eq
+      value: 0.1.3138
+- artifact: ops-runner-0.1.3140.mender
+  provides:
+  - component: qliksense-ops-runner
+    version: 1.0.4578
+    type: ops
+    registry: ghcr.io/qlik-download
+  version: 0.1.3140
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-version
+      scope: inventory
+      type: $eq
+      value: 0.1.3139
+- artifact: ops-runner-0.1.3141.mender
+  provides:
+  - component: qliksense-ops-runner
+    version: 1.0.4579
+    type: ops
+    registry: ghcr.io/qlik-download
+  version: 0.1.3141
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-version
+      scope: inventory
+      type: $eq
+      value: 0.1.3140
+- artifact: ops-runner-0.1.3142.mender
+  provides:
+  - component: qliksense-ops-runner
+    version: 1.0.4580
+    type: ops
+    registry: ghcr.io/qlik-download
+  version: 0.1.3142
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-version
+      scope: inventory
+      type: $eq
+      value: 0.1.3141
+- artifact: ops-runner-0.1.3143.mender
+  provides:
+  - component: qliksense-ops-runner
+    version: 1.0.4581
+    type: ops
+    registry: ghcr.io/qlik-download
+  version: 0.1.3143
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-version
+      scope: inventory
+      type: $eq
+      value: 0.1.3142
+- artifact: ops-runner-0.1.3144.mender
+  provides:
+  - component: qliksense-ops-runner
+    version: 1.0.4582
+    type: ops
+    registry: ghcr.io/qlik-download
+  version: 0.1.3144
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-version
+      scope: inventory
+      type: $eq
+      value: 0.1.3143
+- artifact: ops-runner-0.1.3145.mender
+  provides:
+  - component: qliksense-ops-runner
+    version: 1.0.4583
+    type: ops
+    registry: ghcr.io/qlik-download
+  version: 0.1.3145
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-version
+      scope: inventory
+      type: $eq
+      value: 0.1.3144
+- artifact: ops-runner-0.1.3146.mender
+  provides:
+  - component: qliksense-ops-runner
+    version: 1.0.4585
+    type: ops
+    registry: ghcr.io/qlik-download
+  version: 0.1.3146
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-version
+      scope: inventory
+      type: $eq
+      value: 0.1.3145
