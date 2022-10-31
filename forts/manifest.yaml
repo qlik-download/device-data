@@ -12,26 +12,6 @@ deploymentstages:
 - prod
 platform: []
 components:
-- component: rootfs-azure
-  version: 0.1.949
-  type: rootfs
-  bucket: fort-mender-artifacts-dev
-  fort-device-type: azure
-- component: rootfs-gcp
-  version: 0.1.949
-  type: rootfs
-  bucket: fort-mender-artifacts-dev
-  fort-device-type: gcp
-- component: rootfs-virtual
-  version: 0.1.949
-  type: rootfs
-  bucket: fort-mender-artifacts-dev
-  fort-device-type: vmx
-- component: rootfs-aws
-  version: 0.1.949
-  type: rootfs
-  bucket: fort-mender-artifacts-dev
-  fort-device-type: aws
 - component: script-update
   version: 0.1.36
   script_name: update-apt-1.2
@@ -58,6 +38,26 @@ components:
   version: 1.0.4631
   type: ops
   registry: ghcr.io/qlik-download
+- component: rootfs-gcp
+  version: 0.1.962
+  type: rootfs
+  bucket: fort-mender-artifacts-dev
+  fort-device-type: gcp
+- component: rootfs-virtual
+  version: 0.1.962
+  type: rootfs
+  bucket: fort-mender-artifacts-dev
+  fort-device-type: vmx
+- component: rootfs-azure
+  version: 0.1.962
+  type: rootfs
+  bucket: fort-mender-artifacts-dev
+  fort-device-type: azure
+- component: rootfs-aws
+  version: 0.1.962
+  type: rootfs
+  bucket: fort-mender-artifacts-dev
+  fort-device-type: aws
 artifacts:
 - artifact: ops-runner-0.1.6.mender
   provides:
@@ -34498,3 +34498,83 @@ artifacts:
       scope: inventory
       type: $eq
       value: 0.1.3188
+- artifact: rootfs-gcp-0.1.962.mender
+  provides:
+  - component: rootfs-gcp
+    version: 0.1.962
+    type: rootfs
+    bucket: fort-mender-artifacts-dev
+    fort-device-type: gcp
+  version: 0.1.962
+  deployment:
+    stage: prod
+    state: created
+    filterpredicates:
+    - attribute: rootfs-image.version
+      scope: inventory
+      type: $regex
+      value: 0.1.962
+    - attribute: fort-device-type
+      scope: inventory
+      type: $eq
+      value: gcp
+- artifact: rootfs-virtual-0.1.962.mender
+  provides:
+  - component: rootfs-virtual
+    version: 0.1.962
+    type: rootfs
+    bucket: fort-mender-artifacts-dev
+    fort-device-type: vmx
+  version: 0.1.962
+  deployment:
+    stage: prod
+    state: created
+    filterpredicates:
+    - attribute: rootfs-image.version
+      scope: inventory
+      type: $regex
+      value: 0.1.962
+    - attribute: fort-device-type
+      scope: inventory
+      type: $eq
+      value: vmx
+- artifact: rootfs-azure-0.1.962.mender
+  provides:
+  - component: rootfs-azure
+    version: 0.1.962
+    type: rootfs
+    bucket: fort-mender-artifacts-dev
+    fort-device-type: azure
+  version: 0.1.962
+  deployment:
+    stage: prod
+    state: created
+    filterpredicates:
+    - attribute: rootfs-image.version
+      scope: inventory
+      type: $regex
+      value: 0.1.962
+    - attribute: fort-device-type
+      scope: inventory
+      type: $eq
+      value: azure
+- artifact: rootfs-aws-0.1.962.mender
+  provides:
+  - component: rootfs-aws
+    version: 0.1.962
+    type: rootfs
+    bucket: fort-mender-artifacts-dev
+    fort-device-type: aws
+  version: 0.1.962
+  deployment:
+    stage: prod
+    state: created
+    filterpredicates:
+    - attribute: rootfs-image.version
+      scope: inventory
+      type: $regex
+      value: 0.1.962
+    - attribute: fort-device-type
+      scope: inventory
+      type: $eq
+      value: aws
