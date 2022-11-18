@@ -1,4 +1,4 @@
-version: 0.1.3394
+version: 0.1.3395
 devicetypes:
 - aws
 - gcp
@@ -55,7 +55,7 @@ components:
   type: apt
   bucket: fort-mender-artifacts-dev
 - component: qliksense-ops-runner
-  version: 1.0.4844
+  version: 1.0.4845
   type: ops
   registry: ghcr.io/qlik-download
 artifacts:
@@ -38098,3 +38098,20 @@ artifacts:
       scope: inventory
       type: $eq
       value: 0.1.3393
+- artifact: ops-runner-0.1.3395.mender
+  provides:
+  - component: qliksense-ops-runner
+    version: 1.0.4845
+    type: ops
+    registry: ghcr.io/qlik-download
+  version: 0.1.3395
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-version
+      scope: inventory
+      type: $eq
+      value: 0.1.3394
