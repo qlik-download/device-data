@@ -45,10 +45,6 @@ components:
   type: rootfs
   bucket: fort-mender-artifacts-dev
   fort-device-type: aws
-- component: fortd
-  version: 1.3.14
-  type: snap
-  bucket: qlik-snaps
 - component: apt-package
   version: 0.3.14
   package_name: minio
@@ -58,6 +54,10 @@ components:
   version: 1.0.4971
   type: ops
   registry: ghcr.io/qlik-download
+- component: fortd
+  version: 1.3.15
+  type: snap
+  bucket: qlik-snaps
 artifacts:
 - artifact: ops-runner-0.1.6.mender
   provides:
@@ -39475,3 +39475,20 @@ artifacts:
       scope: inventory
       type: $eq
       value: 0.1.3474
+- artifact: snap-fortd-1.3.15.mender
+  provides:
+  - component: fortd
+    version: 1.3.15
+    type: snap
+    bucket: qlik-snaps
+  version: 1.3.15
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: snaps.fortd.version
+      scope: inventory
+      type: $regex
+      value: 1.3.15
