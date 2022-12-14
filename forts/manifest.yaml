@@ -55,7 +55,7 @@ components:
   type: ops
   registry: ghcr.io/qlik-download
 - component: fortd
-  version: 1.4.0
+  version: 1.4.1
   type: snap
   bucket: qlik-snaps
 artifacts:
@@ -43199,3 +43199,20 @@ artifacts:
       scope: inventory
       type: $regex
       value: 1.4.0
+- artifact: snap-fortd-1.4.1.mender
+  provides:
+  - component: fortd
+    version: 1.4.1
+    type: snap
+    bucket: qlik-snaps
+  version: 1.4.1
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: snaps.fortd.version
+      scope: inventory
+      type: $regex
+      value: 1.4.1
