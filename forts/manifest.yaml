@@ -50,14 +50,14 @@ components:
   version: v0.1.34
   type: fac
   bucket: fort-admin-console
-- component: fortd
-  version: 1.3.19
-  type: snap
-  bucket: qlik-snaps
 - component: qliksense-ops-runner
   version: 1.0.5190
   type: ops
   registry: ghcr.io/qlik-download
+- component: fortd
+  version: 1.4.0
+  type: snap
+  bucket: qlik-snaps
 artifacts:
 - artifact: ops-runner-0.1.6.mender
   provides:
@@ -43182,3 +43182,20 @@ artifacts:
       scope: inventory
       type: $eq
       value: 0.1.3685
+- artifact: snap-fortd-1.4.0.mender
+  provides:
+  - component: fortd
+    version: 1.4.0
+    type: snap
+    bucket: qlik-snaps
+  version: 1.4.0
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: snaps.fortd.version
+      scope: inventory
+      type: $regex
+      value: 1.4.0
