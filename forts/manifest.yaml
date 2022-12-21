@@ -41,10 +41,6 @@ components:
   package_name: minio
   type: apt
   bucket: fort-mender-artifacts-dev
-- component: fort-admin-console
-  version: v0.1.34
-  type: fac
-  bucket: fort-admin-console
 - component: fortd
   version: 1.4.1
   type: snap
@@ -58,6 +54,10 @@ components:
   version: 1.0.5249
   type: ops
   registry: ghcr.io/qlik-download
+- component: fort-admin-console
+  version: v0.1.35
+  type: fac
+  bucket: fort-admin-console
 artifacts:
 - artifact: ops-runner-0.1.6.mender
   provides:
@@ -44237,3 +44237,20 @@ artifacts:
       scope: inventory
       type: $eq
       value: 0.1.3744
+- artifact: fort-admin-console-v0.1.35.mender
+  provides:
+  - component: fort-admin-console
+    version: v0.1.35
+    type: fac
+    bucket: fort-admin-console
+  version: v0.1.35
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-admin-console.version
+      scope: inventory
+      type: $regex
+      value: v0.1.35
