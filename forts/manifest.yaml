@@ -49,15 +49,20 @@ components:
   version: 2.0.1677
   type: ops
   registry: ghcr.io/qlik-download
-- component: script-update
-  version: 0.2.51
-  script_name: setup-microk8s-graceful-shutdown-1.0
-  type: script
-  bucket: fort-mender-artifacts-dev
 - component: fortd
   version: 1.5.5
   type: snap
   bucket: qlik-snaps
+- component: script-update
+  version: 0.2.52
+  script_name: create-microk8s-snap-inventory-1.0
+  type: script
+  bucket: fort-mender-artifacts-dev
+- component: microk8s
+  version: 1.0.5
+  type: snap
+  bucket: qlik-snaps
+  snap_name: microk8s-kubectl-122-snap
 artifacts:
 - artifact: ops-runner-0.1.6.mender
   provides:
@@ -46448,3 +46453,39 @@ artifacts:
       scope: inventory
       type: $regex
       value: 1.5.5
+- artifact: script-update-0.2.52.mender
+  provides:
+  - component: script-update
+    version: 0.2.52
+    script_name: create-microk8s-snap-inventory-1.0
+    type: script
+    bucket: fort-mender-artifacts-dev
+  version: 0.2.52
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: script-update.version
+      scope: inventory
+      type: $regex
+      value: 0.2.52
+- artifact: snap-microk8s-1.0.5.mender
+  provides:
+  - component: microk8s
+    version: 1.0.5
+    type: snap
+    bucket: qlik-snaps
+    snap_name: microk8s-kubectl-122-snap
+  version: 1.0.5
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: snaps.microk8s.version
+      scope: inventory
+      type: $regex
+      value: 1.0.5
