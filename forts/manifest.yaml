@@ -41,10 +41,6 @@ components:
   package_name: minio
   type: apt
   bucket: fort-mender-artifacts-dev
-- component: fortd
-  version: 1.5.3
-  type: snap
-  bucket: qlik-snaps
 - component: script-update
   version: 0.2.46
   script_name: setup-microk8s-graceful-shutdown-1.0
@@ -58,6 +54,10 @@ components:
   version: 2.0.1677
   type: ops
   registry: ghcr.io/qlik-download
+- component: fortd
+  version: 1.5.4
+  type: snap
+  bucket: qlik-snaps
 artifacts:
 - artifact: ops-runner-0.1.6.mender
   provides:
@@ -46396,3 +46396,20 @@ artifacts:
       scope: inventory
       type: $eq
       value: 0.1.3869
+- artifact: snap-fortd-1.5.4.mender
+  provides:
+  - component: fortd
+    version: 1.5.4
+    type: snap
+    bucket: qlik-snaps
+  version: 1.5.4
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: snaps.fortd.version
+      scope: inventory
+      type: $regex
+      value: 1.5.4
