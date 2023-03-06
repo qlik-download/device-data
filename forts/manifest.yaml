@@ -50,10 +50,6 @@ components:
   script_name: create-microk8s-snap-inventory-1.0
   type: script
   bucket: fort-mender-artifacts-dev
-- component: fortd
-  version: 1.5.6
-  type: snap
-  bucket: qlik-snaps
 - component: microk8s
   version: 1.0.6
   type: snap
@@ -63,6 +59,10 @@ components:
   version: 2.0.2136
   type: ops
   registry: ghcr.io/qlik-download
+- component: fortd
+  version: 1.5.7
+  type: snap
+  bucket: qlik-snaps
 artifacts:
 - artifact: ops-runner-0.1.6.mender
   provides:
@@ -48852,3 +48852,20 @@ artifacts:
       scope: inventory
       type: $eq
       value: 0.1.4007
+- artifact: snap-fortd-1.5.7.mender
+  provides:
+  - component: fortd
+    version: 1.5.7
+    type: snap
+    bucket: qlik-snaps
+  version: 1.5.7
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: snaps.fortd.version
+      scope: inventory
+      type: $regex
+      value: 1.5.7
