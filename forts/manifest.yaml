@@ -41,10 +41,6 @@ components:
   package_name: minio
   type: apt
   bucket: fort-mender-artifacts-dev
-- component: fort-admin-console
-  version: v0.1.35
-  type: fac
-  bucket: fort-admin-console
 - component: script-update
   version: 0.2.52
   script_name: create-microk8s-snap-inventory-1.0
@@ -63,6 +59,10 @@ components:
   version: 1.6.0
   type: snap
   bucket: qlik-snaps
+- component: fort-admin-console
+  version: v0.1.36
+  type: fac
+  bucket: fort-admin-console
 artifacts:
 - artifact: ops-runner-0.1.6.mender
   provides:
@@ -54360,3 +54360,20 @@ artifacts:
       scope: inventory
       type: $regex
       value: 1.6.0
+- artifact: fort-admin-console-v0.1.36.mender
+  provides:
+  - component: fort-admin-console
+    version: v0.1.36
+    type: fac
+    bucket: fort-admin-console
+  version: v0.1.36
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-admin-console.version
+      scope: inventory
+      type: $regex
+      value: v0.1.36
