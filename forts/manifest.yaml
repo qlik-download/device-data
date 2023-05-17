@@ -55,14 +55,14 @@ components:
   type: snap
   bucket: qlik-snaps
   snap_name: microk8s-kubectl-122-snap
-- component: fortd
-  version: 1.5.9
-  type: snap
-  bucket: qlik-snaps
 - component: qliksense-ops-runner
   version: 2.0.2714
   type: ops
   registry: ghcr.io/qlik-download
+- component: fortd
+  version: 1.6.0
+  type: snap
+  bucket: qlik-snaps
 artifacts:
 - artifact: ops-runner-0.1.6.mender
   provides:
@@ -54343,3 +54343,20 @@ artifacts:
       scope: inventory
       type: $eq
       value: 0.1.4327
+- artifact: snap-fortd-1.6.0.mender
+  provides:
+  - component: fortd
+    version: 1.6.0
+    type: snap
+    bucket: qlik-snaps
+  version: 1.6.0
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: snaps.fortd.version
+      scope: inventory
+      type: $regex
+      value: 1.6.0
