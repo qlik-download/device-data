@@ -41,20 +41,11 @@ components:
   package_name: minio
   type: apt
   bucket: fort-mender-artifacts-dev
-- component: script-update
-  version: 0.2.52
-  script_name: create-microk8s-snap-inventory-1.0
-  type: script
-  bucket: fort-mender-artifacts-dev
 - component: microk8s
   version: 1.0.6
   type: snap
   bucket: qlik-snaps
   snap_name: microk8s-kubectl-122-snap
-- component: fortd
-  version: 1.6.0
-  type: snap
-  bucket: qlik-snaps
 - component: fort-admin-console
   version: v0.1.36
   type: fac
@@ -63,6 +54,15 @@ components:
   version: 2.0.2752
   type: ops
   registry: ghcr.io/qlik-download
+- component: script-update
+  version: 0.2.97
+  script_name: enable-metrics-server-1.0
+  type: script
+  bucket: fort-mender-artifacts-dev
+- component: fortd
+  version: 1.7.0
+  type: snap
+  bucket: qlik-snaps
 artifacts:
 - artifact: ops-runner-0.1.6.mender
   provides:
@@ -54921,3 +54921,38 @@ artifacts:
       scope: inventory
       type: $eq
       value: 0.1.4359
+- artifact: script-update-0.2.97.mender
+  provides:
+  - component: script-update
+    version: 0.2.97
+    script_name: enable-metrics-server-1.0
+    type: script
+    bucket: fort-mender-artifacts-dev
+  version: 0.2.97
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: script-update.version
+      scope: inventory
+      type: $regex
+      value: 0.2.97
+- artifact: snap-fortd-1.7.0.mender
+  provides:
+  - component: fortd
+    version: 1.7.0
+    type: snap
+    bucket: qlik-snaps
+  version: 1.7.0
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: snaps.fortd.version
+      scope: inventory
+      type: $regex
+      value: 1.7.0
