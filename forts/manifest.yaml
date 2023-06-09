@@ -46,10 +46,6 @@ components:
   type: snap
   bucket: qlik-snaps
   snap_name: microk8s-kubectl-122-snap
-- component: fort-admin-console
-  version: v0.1.36
-  type: fac
-  bucket: fort-admin-console
 - component: script-update
   version: 0.2.97
   script_name: enable-metrics-server-1.0
@@ -63,6 +59,10 @@ components:
   version: 1.7.1
   type: snap
   bucket: qlik-snaps
+- component: fort-admin-console
+  version: v0.1.37
+  type: fac
+  bucket: fort-admin-console
 artifacts:
 - artifact: ops-runner-0.1.6.mender
   provides:
@@ -57200,3 +57200,20 @@ artifacts:
       scope: inventory
       type: $regex
       value: 1.7.1
+- artifact: fort-admin-console-v0.1.37.mender
+  provides:
+  - component: fort-admin-console
+    version: v0.1.37
+    type: fac
+    bucket: fort-admin-console
+  version: v0.1.37
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: fort-admin-console.version
+      scope: inventory
+      type: $regex
+      value: v0.1.37
