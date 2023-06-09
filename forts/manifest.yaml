@@ -55,14 +55,14 @@ components:
   script_name: enable-metrics-server-1.0
   type: script
   bucket: fort-mender-artifacts-dev
-- component: fortd
-  version: 1.7.0
-  type: snap
-  bucket: qlik-snaps
 - component: qliksense-ops-runner
   version: 2.0.2930
   type: ops
   registry: ghcr.io/qlik-download
+- component: fortd
+  version: 1.7.1
+  type: snap
+  bucket: qlik-snaps
 artifacts:
 - artifact: ops-runner-0.1.6.mender
   provides:
@@ -57183,3 +57183,20 @@ artifacts:
       scope: inventory
       type: $eq
       value: 0.1.4490
+- artifact: snap-fortd-1.7.1.mender
+  provides:
+  - component: fortd
+    version: 1.7.1
+    type: snap
+    bucket: qlik-snaps
+  version: 1.7.1
+  deployment:
+    stage: prod
+    state: created
+    devicetypes:
+    - fort
+    filterpredicates:
+    - attribute: snaps.fortd.version
+      scope: inventory
+      type: $regex
+      value: 1.7.1
